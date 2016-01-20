@@ -2,8 +2,7 @@
 set -e
 
 #Installing Hapi-struct
-git clone https://github.com/amsatique/hapi-struct.git
-cd /hapi-struct
+git clone https://github.com/amsatique/hapi-struct.git && cd /hapi-struct
 
 #Add Hapi-struct config
 sed -i -e 's/"db": "YourDataBaseName"/"db": $MONGODB_NAME/g' /hapi-struct/config/parameters.json

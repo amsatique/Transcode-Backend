@@ -1,14 +1,14 @@
 FROM ubuntu:latest
 MAINTAINER Francois Dazan
 
-RUN apt-get update
 # Installing dependencies
-RUN apt-get -y install wget git
+RUN apt-get update && \
+    apt-get -y install curl wget git g++ make python-dev build-essential
 
-#Installing Nodejs
-WORKDIR /
-RUN wget https://nodejs.org/dist/v5.3.0/node-v5.3.0-linux-x64.tar.gz && mkdir /nodejs
-RUN tar -xvf node-v5.3.0-linux-x64.tar.gz -C /nodejs
+# Installing nodejs
+RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
+    apt-get -y install nodejs
+
 
 # Set the port to 80
 EXPOSE 80
