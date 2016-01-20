@@ -3,7 +3,7 @@ MAINTAINER Francois Dazan
 
 RUN apt-get update
 # Installing dependencies
-RUN apt-get -y install tar wget git
+RUN apt-get -y install wget git
 
 #Installing Nodejs
 WORKDIR /
@@ -21,4 +21,4 @@ RUN chmod +x /*.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Executing supervisord
-CMD ["/nodejs/node *******"]
+CMD ["npm start"]

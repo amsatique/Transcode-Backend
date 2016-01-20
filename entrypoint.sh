@@ -2,9 +2,8 @@
 set -e
 
 #Installing Hapi-struct
-wget https://github.com/MarcHanin/hapi-struct/archive/master.zip
-tar -xvf master.zip -C /Hapi-Struct --strip-components=1
-rm -rf master.zip
+git clone https://github.com/amsatique/hapi-struct.git
+cd /hapi-struct
 
 #Add Hapi-struct config
 sed -i -e 's/"db": "YourDataBaseName"/"db": $MONGODB_NAME/g' /Hapi-Struct/config/parameters.json
