@@ -3,7 +3,7 @@ MAINTAINER Francois Dazan
 
 RUN apt-get update
 # Installing dependencies
-RUN apt-get -y install wget git
+RUN apt-get -y install tar wget git
 
 #Installing Nodejs
 WORKDIR /
