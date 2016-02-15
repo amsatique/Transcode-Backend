@@ -20,5 +20,3 @@ sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": ${EMAIL_PASSWD}/g"
 
 cd /app
 npm install
-
-exec "$@"
