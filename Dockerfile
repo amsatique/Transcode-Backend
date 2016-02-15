@@ -9,6 +9,8 @@ RUN apt-get update && \
 RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
     apt-get -y install nodejs
 
+# Copy app to container
+COPY app /app
 
 # Set the port to 80
 EXPOSE 80

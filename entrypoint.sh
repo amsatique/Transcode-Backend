@@ -9,18 +9,16 @@ set -e
 #EMAIL_NAME=${EMAIL_NAME}
 #EMAIL_PASSWD=${EMAIL_PASSWD}
 
-#Installing Hapi-struct
-git clone https://github.com/amsatique/hapi-struct.git && cd /hapi-struct
+#Add app config
+sed -i -e "s/\"db\": \"YourDataBaseName\"/\"db\": ${MONGODB_NAME}/g" /app/config/parameters.json
+sed -i -e "s/\"username\": \"YourDataBaseUserName\"/\"username\": ${MONGODB_USER}/g" /app/config/parameters.json
+sed -i -e "s/\"password\": \"YourDatabasePassword\"/\"password\": ${MONGODB_PASS}/g" /app/config/parameters.json
+sed -i -e "s/\"privateKey\": \"YourPrivateKey\"/\"privateKey\": ${PRIVATE_KEY}/g" /app/config/parameters.json
+sed -i -e "s/\"email\": \"senderMail@website.com\"/\"email\": ${EMAIL}/g" /app/config/parameters.json
+sed -i -e "s/\"userName\": \"YourMailAccount\"/\"username\": ${EMAIL_NAME}/g" /app/config/parameters.json
+sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": ${EMAIL_PASSWD}/g" /app/config/parameters.json
 
-#Add Hapi-struct config
-sed -i -e "s/\"db\": \"YourDataBaseName\"/\"db\": ${MONGODB_NAME}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"username\": \"YourDataBaseUserName\"/\"username\": ${MONGODB_USER}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"password\": \"YourDatabasePassword\"/\"password\": ${MONGODB_PASS}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"privateKey\": \"YourPrivateKey\"/\"privateKey\": ${PRIVATE_KEY}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"email\": \"senderMail@website.com\"/\"email\": ${EMAIL}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"userName\": \"YourMailAccount\"/\"username\": ${EMAIL_NAME}/g" /hapi-struct/config/parameters.json
-sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": ${EMAIL_PASSWD}/g" /hapi-struct/config/parameters.json
-
+cd /app
 npm install
 
 exec "$@"
