@@ -23,4 +23,4 @@ RUN chmod +x /*.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 # Executing supervisord
-CMD ["npm start"]
+CMD ["npm", "start"]
