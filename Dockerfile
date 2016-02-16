@@ -16,7 +16,6 @@ COPY parameters.json /app/config/parameters.json
 EXPOSE 80
 
 # Start script
-RUN npm install
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /*.sh

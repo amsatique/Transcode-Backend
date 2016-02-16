@@ -19,5 +19,6 @@ sed -i -e "s/\"userName\": \"YourMailAccount\"/\"username\": ${EMAIL_NAME}/g" /a
 sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": ${EMAIL_PASSWD}/g" /app/config/parameters.json
 
 cd /app
+npm install
 
 exec "$@"
