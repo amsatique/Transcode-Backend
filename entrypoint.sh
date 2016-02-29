@@ -9,7 +9,7 @@ sed -i -e "s/\"privateKey\": \"YourPrivateKey\"/\"privateKey\": \"${PRIVATE_KEY}
 sed -i -e "s/\"email\": \"senderMail@website.com\"/\"email\": \"${EMAIL}\"/g" /app/config/parameters.json
 sed -i -e "s/\"userName\": \"YourMailAccount\"/\"username\": \"${EMAIL_NAME}\"/g" /app/config/parameters.json
 sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": \"${EMAIL_PASSWD}\"/g" /app/config/parameters.json
-sed -i -e "s/\"host\": \"127.0.0.1\"/\"host\": \"${HOST}\"/2" /app/config/parameters.json
+sed -z -i -e "s/127\.0\.0\.1/${MONGO_HOST}/2" /app/config/parameters.json
 
 #Install Dependencies
 cd /app
