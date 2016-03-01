@@ -17,6 +17,6 @@ npm install
 
 #Pushbullet notifications
 echo "Node Dependencies correctly installed on ${HOSTNAME}" >> /var/log/messages
-sh pushbullet.sh
+sh /pushbullet.sh
 
 exec "$@"
