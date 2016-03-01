@@ -14,6 +14,8 @@ sed -z -i -e "s/127\.0\.0\.1/${MONGO_HOST}/2" /app/config/parameters.json
 #Install Dependencies
 cd /app
 npm install
+
+#Pushbullet notifications
 echo "Node Dependencies correctly installed on ${HOSTNAME}" >> /var/log/messages
 sh pushbullet.sh
 
