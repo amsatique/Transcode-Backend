@@ -16,7 +16,7 @@ cd /app
 npm install
 
 #Pushbullet notifications
-echo "Node Dependencies correctly installed on ${HOSTNAME}" >> /var/log/messages
-sh /pushbullet.sh
+echo "Container succefully redeployed : ${TUTUM_SERVICE_HOSTNAME} - ${TUTUM_CONTAINER_HOSTNAME}" >> /var/log/messages
+/pushbullet.sh
 
 exec "$@"
