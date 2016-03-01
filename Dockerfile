@@ -25,6 +25,9 @@ RUN chmod +x /*.sh
 RUN cd /app && npm install
 
 
+# Expose port
+EXPOSE 3000
+
 # Executing entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
 
