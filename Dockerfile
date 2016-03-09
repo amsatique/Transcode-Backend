@@ -22,6 +22,9 @@ COPY entrypoint.sh /entrypoint.sh
 COPY pushbullet.sh /pushbullet.sh
 RUN chmod +x /*.sh
 
+RUN cd /app
+RUN npm install
+
 # Expose port
 EXPOSE 3000
 

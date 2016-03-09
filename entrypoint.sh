@@ -11,9 +11,6 @@ sed -i -e "s/\"userName\": \"YourMailAccount\"/\"username\": \"${EMAIL_NAME}\"/g
 sed -i -e "s/\"password\": \"YourMailPassword\"/\"password\": \"${EMAIL_PASSWD}\"/g" /app/config/parameters.json
 sed -z -i -e "s/127\.0\.0\.1/${MONGO_HOST}/2" /app/config/parameters.json
 
-#Install Dependencies
-cd /app
-npm install
 
 #Pushbullet notifications
 echo "Container succefully redeployed : ${TUTUM_STACK_NAME} - ${TUTUM_SERVICE_HOSTNAME} - ${TUTUM_CONTAINER_HOSTNAME}" >> /var/log/messages
