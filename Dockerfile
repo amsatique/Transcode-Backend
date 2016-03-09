@@ -9,9 +9,8 @@ RUN apt-get update && \
 RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && \
     apt-get -y install nodejs
 
-# Copy app to container
+# Copy app et clean parameters to container
 COPY app /app
-
 COPY parameters.json /app/config/parameters.json
 
 # Set script
@@ -19,6 +18,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY pushbullet.sh /pushbullet.sh
 RUN chmod +x /*.sh
 
+# Start requirement installation
 WORKDIR /app
 RUN npm install
 
