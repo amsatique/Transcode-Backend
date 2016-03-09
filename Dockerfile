@@ -14,19 +14,17 @@ COPY app /app
 
 COPY parameters.json /app/config/parameters.json
 
-# Set the port to 80
-EXPOSE 80
-
 # Set script
 COPY entrypoint.sh /entrypoint.sh
 COPY pushbullet.sh /pushbullet.sh
 RUN chmod +x /*.sh
 
-RUN cd /app
+WORKDIR /app
 RUN npm install
 
 # Expose port
 EXPOSE 3000
+EXPOSE 80
 
 # Executing entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
